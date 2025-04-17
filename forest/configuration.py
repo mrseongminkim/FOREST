@@ -18,10 +18,10 @@ class Configuration:
     pruning: bool = True
 
     # Activate/deactivate synthesis of capturing groups
-    synth_captures: bool = True
+    synth_captures: bool = False
 
     # Activate/deactivate synthesis of capture conditions
-    synth_conditions: bool = True
+    synth_conditions: bool = False
 
     # Activate/deactivate disambiguation of the synthesised solutions.
     disambiguation: bool = True

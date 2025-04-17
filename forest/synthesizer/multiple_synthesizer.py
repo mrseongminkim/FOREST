@@ -14,8 +14,8 @@ from forest.distinguisher import RegexDistinguisher
 from forest.logger import get_logger
 from forest.spec import TyrellSpec
 from forest.stats import Statistics
-from forest.utils import nice_time, is_regex, yes_values, no_values, conditions_to_str
-from forest.visitor import RegexInterpreter, NodeCounter
+from forest.utils import conditions_to_str, is_regex, nice_time, no_values, yes_values
+from forest.visitor import NodeCounter, RegexInterpreter
 
 logger = get_logger('forest')
 stats = Statistics.get_statistics()
@@ -108,7 +108,10 @@ class MultipleSynthesizer(ABC):
                 first_regex_str = self._decider.interpreter.eval(self.first_regex)
                 info_str += f'First regex: {first_regex_str}\n'
             regex, capturing_groups, capture_conditions = self.solutions[0]
-            conditions, conditions_captures = capture_conditions
+            if self.configuration.synth_captures and self.configuration.synth_conditions:
+                conditions, conditions_captures = capture_conditions
+            else:
+                conditions, conditions_captures = [], []
             solution_str = self._decider.interpreter.eval(regex, captures=conditions_captures)
             if len(conditions) > 0:
                 solution_str += ', ' + conditions_to_str(conditions)
@@ -251,18 +254,15 @@ class MultipleSynthesizer(ABC):
 
             self.solutions.append((regex, capturing_groups, capture_conditions))
 
-            if len(self.solutions) > 0 and not self.configuration.disambiguation:
-                break
-
-            if len(self.solutions) >= self.max_before_distinguishing:
+            if self.configuration.disambiguation and len(self.solutions) >= self.max_before_distinguishing:
                 # if there are more than max_before_disambiguating solutions, disambiguate.
                 self.distinguish()
 
             if self.indistinguishable >= self.max_indistinguishable:
                 break
-        while len(self.solutions) > 1:
+        while self.configuration.disambiguation and len(self.solutions) > 1:
             self.distinguish()
-        assert len(self.solutions) <= 1  # only one regex remains
+        assert not self.configuration.disambiguation or len(self.solutions) <= 1  # only one regex remains
 
     def try_capture_conditions(self, regex):
         cap_conditions_synthesis_start = time.time()

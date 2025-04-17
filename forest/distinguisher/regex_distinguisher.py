@@ -7,11 +7,13 @@ import z3
 
 from forest.logger import get_logger
 from forest.utils import check_conditions
-from forest.visitor import ToZ3, RegexInterpreter
+from forest.visitor import RegexInterpreter, ToZ3
 
 logger = get_logger('forest')
 
 use_derivatives = True
+
+
 # z3.set_param('smt.string_solver', 'z3str3')
 
 
@@ -60,7 +62,7 @@ class RegexDistinguisher:
         solver.add(ro_1 != ro_2)
 
         if solver.check() == z3.sat:
-            if len(r1[2][0]) == 0 and len(r2[2][0]) == 0:
+            if (len(r1[2]) == 0 or len(r1[2][0]) == 0) and (len(r2[2]) == 0 or len(r2[2][0]) == 0):
                 dist_input = solver.model()[dist].as_string()
                 if solver.model()[ro_1]:
                     return dist_input, [r1], [r2], []
