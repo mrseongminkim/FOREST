@@ -1,7 +1,7 @@
 import re
 
-from forest.spec import Predicate
-from forest.spec.expr import *
+from ..spec import Predicate
+from ..spec.expr import *
 from .example_decider import Example, ExampleDecider
 from .result import ok, bad
 from ..dsl import ApplyNode

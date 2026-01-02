@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from itertools import chain
 from typing import cast, List, Any
 
-from forest.spec import Type, Production, EnumProduction, ParamProduction, \
+from ..spec import Type, Production, EnumProduction, ParamProduction, \
     FunctionProduction
 
 

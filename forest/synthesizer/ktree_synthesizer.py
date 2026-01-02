@@ -1,9 +1,9 @@
 import time
 
-from forest.configuration import Configuration
-from forest.enumerator import KTreeEnumerator
-from forest.logger import get_logger
-from forest.stats import Statistics
+from ..configuration import Configuration
+from ..enumerator import KTreeEnumerator
+from ..logger import get_logger
+from ..stats import Statistics
 from .multiple_synthesizer import MultipleSynthesizer
 
 logger = get_logger('forest')

@@ -1,4 +1,4 @@
-from forest.dsl import Node
+from ..dsl import Node
 from .post_order import PostOrderInterpreter
 
 

@@ -8,7 +8,7 @@ from logging import getLogger
 
 import z3
 
-from forest.spec import TyrellSpec
+from ..spec import TyrellSpec
 from .regex_enumerator import RegexEnumerator
 from .. import dsl as D
 

@@ -1,6 +1,7 @@
 import operator
-import re
 from typing import List
+
+from utils import engine
 
 import z3
 
@@ -28,9 +29,9 @@ def is_regex(tentative_regex: str):
     if len(tentative_regex) == 0:
         return False
     try:
-        re.compile(tentative_regex)
+        engine.compile(tentative_regex)
         return True
-    except re.error:
+    except engine.EngineException:
         return False
 
 

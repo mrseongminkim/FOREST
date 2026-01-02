@@ -1,7 +1,7 @@
 from ast import literal_eval
 from typing import cast
 
-from forest.logger import get_logger
+from ..logger import get_logger
 from .expr import *
 from .parser import Visitor_Recursive
 from .spec import TypeSpec, ProductionSpec, ProgramSpec, PredicateSpec, TyrellSpec

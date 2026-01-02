@@ -1,8 +1,8 @@
 import re
 
-import forest.spec as spec
-from forest.logger import get_logger
-from forest.utils import transpose, find_all_cs
+from .. import spec
+from ..logger import get_logger
+from ..utils import transpose, find_all_cs
 
 logger = get_logger('forest')
 

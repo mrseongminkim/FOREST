@@ -3,10 +3,10 @@ from typing import Tuple, List
 
 from termcolor import colored
 
-from forest.dsl.dsl_builder import DSLBuilder
-from forest.logger import get_logger
-from forest.spec import TyrellSpec
-from forest.utils import is_regex
+from .dsl.dsl_builder import DSLBuilder
+from .logger import get_logger
+from .spec import TyrellSpec
+from .utils import is_regex
 
 logger = get_logger('forest')
 

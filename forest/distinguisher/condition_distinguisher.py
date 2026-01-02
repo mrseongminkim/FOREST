@@ -5,10 +5,10 @@ from typing import List, Tuple
 
 import z3
 
-from forest import utils
-from forest.dsl import Node
-from forest.logger import get_logger
-from forest.visitor import RegexInterpreter
+from .. import utils
+from ..dsl import Node
+from ..logger import get_logger
+from ..visitor import RegexInterpreter
 
 logger = get_logger('forest')
 
