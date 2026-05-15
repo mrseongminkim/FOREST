@@ -3,8 +3,8 @@ from typing import Optional, List, Iterable
 
 import z3
 
-from forest import utils
-from forest.utils import make_z3_and
+from .. import utils
+from ..utils import make_z3_and
 
 
 class CaptureConditionsEnumerator:

@@ -4,13 +4,13 @@ from typing import List, Optional
 
 from termcolor import colored
 
-from forest.distinguisher import ConditionDistinguisher
-from forest.dsl import Node
-from forest.enumerator.capture_conditions import CaptureConditionsEnumerator
-from forest.logger import get_logger
-from forest.stats import Statistics
-from forest.utils import all_sublists_n, is_int, yes_values, no_values, check_conditions
-from forest.visitor import RegexInterpreter
+from ..distinguisher import ConditionDistinguisher
+from ..dsl import Node
+from ..enumerator.capture_conditions import CaptureConditionsEnumerator
+from ..logger import get_logger
+from ..stats import Statistics
+from ..utils import all_sublists_n, is_int, yes_values, no_values, check_conditions
+from ..visitor import RegexInterpreter
 
 logger = get_logger('forest')
 stats = Statistics.get_statistics()

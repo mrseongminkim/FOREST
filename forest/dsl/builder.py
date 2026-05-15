@@ -1,7 +1,7 @@
 from typing import Union
 
-from forest.generic_visitor import GenericVisitor
-from forest.spec import TyrellSpec
+from ..generic_visitor import GenericVisitor
+from ..spec import TyrellSpec
 from .node import *
 
 

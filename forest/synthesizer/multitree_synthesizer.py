@@ -3,14 +3,14 @@ import re
 import time
 from copy import deepcopy
 
-from forest.configuration import Configuration
-from forest.decider import RegexDecider
-from forest.dsl.dsl_builder import DSLBuilder
-from forest.enumerator import StaticMultiTreeEnumerator, DynamicMultiTreeEnumerator
-from forest.logger import get_logger
-from forest.stats import Statistics
-from forest.utils import transpose, find_all_cs
-from forest.visitor import RegexInterpreter
+from ..configuration import Configuration
+from ..decider import RegexDecider
+from ..dsl.dsl_builder import DSLBuilder
+from ..enumerator import StaticMultiTreeEnumerator, DynamicMultiTreeEnumerator
+from ..logger import get_logger
+from ..stats import Statistics
+from ..utils import transpose, find_all_cs
+from ..visitor import RegexInterpreter
 from .multiple_synthesizer import MultipleSynthesizer
 
 logger = get_logger('forest')

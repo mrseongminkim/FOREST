@@ -4,16 +4,16 @@ from copy import deepcopy
 
 import z3
 
-from forest.configuration import Configuration
-from forest.decider import RegexDecider
-from forest.dsl import Node
-from forest.dsl.dsl_builder import DSLBuilder
-from forest.enumerator import DynamicMultiTreeEnumerator, StaticMultiTreeEnumerator
-from forest.logger import get_logger
-from forest.stats import Statistics
-from forest.synthesizer import MultiTreeSynthesizer
-from forest.utils import transpose
-from forest.visitor import RegexInterpreter, ToZ3
+from ..configuration import Configuration
+from ..decider import RegexDecider
+from ..dsl import Node
+from ..dsl.dsl_builder import DSLBuilder
+from ..enumerator import DynamicMultiTreeEnumerator, StaticMultiTreeEnumerator
+from ..logger import get_logger
+from ..stats import Statistics
+from ..synthesizer import MultiTreeSynthesizer
+from ..utils import transpose
+from ..visitor import RegexInterpreter, ToZ3
 
 logger = get_logger('forest')
 stats = Statistics.get_statistics()

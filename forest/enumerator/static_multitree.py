@@ -2,7 +2,7 @@ from typing import List
 
 import z3
 
-from forest.spec import TyrellSpec
+from ..spec import TyrellSpec
 from .regex_enumerator import RegexEnumerator
 from ..dsl import Node, Builder
 from ..logger import get_logger

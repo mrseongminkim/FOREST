@@ -7,15 +7,15 @@ from typing import List
 
 from termcolor import colored
 
-from forest.capturer import Capturer
-from forest.configuration import Configuration
-from forest.decider import RegexDecider
-from forest.distinguisher import RegexDistinguisher
-from forest.logger import get_logger
-from forest.spec import TyrellSpec
-from forest.stats import Statistics
-from forest.utils import nice_time, is_regex, yes_values, no_values, conditions_to_str
-from forest.visitor import RegexInterpreter, NodeCounter
+from ..capturer import Capturer
+from ..configuration import Configuration
+from ..decider import RegexDecider
+from ..distinguisher import RegexDistinguisher
+from ..logger import get_logger
+from ..spec import TyrellSpec
+from ..stats import Statistics
+from ..utils import nice_time, is_regex, yes_values, no_values, conditions_to_str
+from ..visitor import RegexInterpreter, NodeCounter
 
 logger = get_logger('forest')
 stats = Statistics.get_statistics()
